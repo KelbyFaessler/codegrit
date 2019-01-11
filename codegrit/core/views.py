@@ -10,3 +10,14 @@ def index(request):
         'index.html',
         context={}
     )
+
+def about(request):
+    """
+    about page
+    """
+
+    return render(
+        request,
+        'about.html',
+        context={}
+    )
