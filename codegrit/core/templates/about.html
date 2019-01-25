@@ -3,8 +3,18 @@
 {% load static %}
 
 {% block includes %}
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<!--
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+  rel="stylesheet"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous">
+-->
+<!--
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}bootstrap_4_1_3/css/bootstrap.min.css">
+-->  
+<link rel="stylesheet" type="text/css" href="/static/bootstrap_4_1_3/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -13,28 +23,68 @@
         <div class="cover-container">
             <div class="masthead clearfix">
                 <div class="inner">
-                    <h3 class="masthead-brand">Dev Refresh</h3>
-                    <nav>
-                    <ul class="nav masthead-nav">
-                        <li><a href="https://devrefresh.com">Home</a></li>
-                        <li class="active"><a href="https://devrefresh.com/about">About</a></li>
-                        <li><a href="https://devrefresh.com/contact">Contact</a></li>
-                    </ul>
-                    </nav>
+                    <div class="row">
+                        <h3 class="masthead-brand col-4">Dev Refresh</h3>
+                        <nav class="col-8">
+                        <ul class="nav masthead-nav">
+                            <li><a href="https://devrefresh.com">Home</a></li>
+                            <li class="active"><a href="https://devrefresh.com/about">About</a></li>
+                            <li><a href="https://devrefresh.com/contact">Contact</a></li>
+                            <li><a href="https://devrefresh.com/signup">Sign up</a></li>
+                        </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
 
             <div class="inner cover">
-                <h1 class="cover-heading">About us:</h1>
-                <p class="lead">We'll help you be a better developer. Our advanced learning materials were developed by experienced, highly skilled engineers. This is the stuff they don't teach you in school!</p>
+                <h1 class="cover-heading mb-4">About us:</h1>
                 <p class="lead">
-                    <a href="#" class="btn btn-lg btn-default">Sign up</a>
+                    The field of software development is constantly changing. To keep pace, we as software developers 
+                    need to spend time continually learning new skills. If you think about it, the next promotion 
+                    you’ve been seeking, or the respect of your co-workers, might depend on it.  In general, the more 
+                    skilled a software developer, the faster and more accurately they can complete work. That’s why 
+                    the most skilled developers are compensated at multiples of the average developer salary. And 
+                    they are also given the most interesting projects at work, with the most authority to make 
+                    technical decisions.
+                </p>
+                <p class="lead">
+                    Software engineering is new relative to other engineering disciplines. Because it’s new, it’s 
+                    also underdeveloped and therefore changes more often. The software skills you learned 5 or 10 
+                    years ago may not be applicable today. This means software engineers have more incentive to 
+                    make their learning efficient and effective.
+                </p>
+                <p class="lead">
+                    The most effective way to learn new skills is through deliberate practice. Have you ever 
+                    wondered why one person could pick up a new skill, for example chess, and quickly progress, 
+                    while another person might spend the same amount of hours on it yet not get better? The 
+                    answer lies in how each person approaches practicing and learning. And what about the people 
+                    that progress the quickest? Most likely they are using deliberate practice.
+                </p>
+                <p class="lead">
+                    So what’s deliberate practice, and how can it be applied to software development? 
+                    Deliberate practice has well defined, specific learning goals. Deliberate practice always 
+                    involves feedback. And most importantly, deliberate practice requires getting out of one’s 
+                    comfort zone. Now you can see why most people don’t use deliberate practice: Most people will 
+                    avoid the discomfort that’s required to grow. And most people aren’t attentive enough to set 
+                    goals and use feedback. But if you really want to get better that’s what you need to do, and 
+                    we’ll help you do it.
+                </p>
+                <p class="lead">
+                    Our online learning platform currently has courses for the following languages: C/C++, 
+                    Java, Python, HTML/CSS/Javascript, and Go. Courses for new languages are in the works, as 
+                    well as courses for software development skills not related to a particular language. You 
+                    can get access to our entire catalogue of learning materials for free during a risk-free 
+                    30 day trial. After that, it’s only $40 per month.
+                </p>
+                <p class="lead">
+                    <a href="#" class="btn btn-lg btn-default mt-4">Sign up</a>
                 </p>
             </div>
 
             <div class="mastfoot">
                 <div class="inner">
-                    <p>Website by <a href="https://kelbyfaessler.com">Kelby Faessler</a> <a href="https://twitter.com/kelbsw">(@kelbsw)</a>. Built using <a href="https://getbootstrap.com/">Bootstrap</a>,</p>
+                    <p><em>&copy Copyright 2018 - 2019 Kelby Faessler, All rights reserved</em></p>
                 </div>
             </div>
         </div>
@@ -45,6 +95,7 @@
 
 
 {% block scripts %}
+<!--
 <script
   src="https://code.jquery.com/jquery-1.12.4.min.js"
   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
@@ -53,7 +104,27 @@
     src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-<!--
-
 -->
-  {% endblock %}
+
+<!-- script locations when working locally only -->
+<!--
+<script
+  src="{{ STATIC_URL }}jquery_1_12_4/jquery-1.12.4.min.js"
+  type="text/javascript">
+</script>
+<script
+  src="{{ STATIC_URL }}bootstrap_4_1_3/js/bootstrap.min.js"
+  type="text/javascript">
+</script>
+-->
+
+<script
+  src="/static/jquery_1_12_4/jquery-1.12.4.min.js"
+  type="text/javascript">
+</script>
+<script
+  src="/static/bootstrap_4_1_3/js/bootstrap.min.js"
+  type="text/javascript">
+</script>
+
+{% endblock %}
