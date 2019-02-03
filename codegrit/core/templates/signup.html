@@ -33,7 +33,18 @@
 
               <p class="mb-5">Sign up and get 30 days full access for free!</p>
               
-              <form class="needs-validation" novalidate>
+              <form action="" method="post" class="needs-validation" novalidate>
+                {% csrf_token %}
+
+                <!-- Begin Django form data-->
+                {% for field in form %}
+                  {{ field.errors}}
+                  {{ field.label }}
+                  {{ field }}
+                {% endfor %}
+
+                <!-- End Django form data-->
+
                 <div class="form-row justify-content-around">
                   <div class="col-md-5 mb-3">
                     <label for="validationCustom01">First name</label>
@@ -81,7 +92,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                     <label class="form-check-label" for="invalidCheck">
-                      Agree to terms and conditions
+                      I agree to terms and conditions
                     </label>
                     <div class="invalid-feedback">
                       You must agree before submitting.

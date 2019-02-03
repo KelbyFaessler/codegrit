@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from core.forms import UserForm
+from django.contrib.auth import login
+from django.http import HttpResponseRedirect
 
 def index(request):
     """
@@ -38,11 +41,20 @@ def signup(request):
     """
     signup page: form to collect user info if they want to sign up
     """
+    if request.method == "POST":
+        form = UserForm(request.POST)        
+        if form.is_valid():
+            new_user = User.objects.create_user(**form.cleaned_data)
+            login(new_user)
+            #redirect
+            return HttpResponseRedirect('index.html')
+    else:
+        form = UserForm()
 
     return render(
         request,
         'signup.html',
-        context={}
+        context={'form': form}
     )
 
 def terms(request):
@@ -54,4 +66,4 @@ def terms(request):
         request,
         'terms.html',
         context={}
-    )    
+    )
