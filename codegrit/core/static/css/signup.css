@@ -106,6 +106,16 @@ body {
   }
 }
 
+/*
+ * Form
+ */
+ .field-error-list {
+    color: #e09d9d;
+ }
+
+.field-error {
+    background-color: #e09d9d;
+}
 
 /*
  * Cover
@@ -147,6 +157,6 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 800px;
+    width: 700px;
   }
 }
