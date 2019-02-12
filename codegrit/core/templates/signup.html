@@ -19,10 +19,10 @@
             <h3 class="masthead-brand col-4">Dev Refresh</h3>
             <nav class="col-8">
               <ul class="nav masthead-nav">
-                <li><a href="https://devrefresh.com">Home</a></li>
-                <li><a href="https://devrefresh.com/about">About</a></li>
-                <li><a href="https://devrefresh.com/contact">Contact</a></li>
-                <li class="active"><a href="https://devrefresh.com/signup">Sign up</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li class="active"><a href="{% url 'signup' %}">Sign up</a></li>
               </ul>
             </nav>
           </div>
@@ -34,7 +34,7 @@
 
         <p class="mb-5">Sign up and get 30 days full access for free!</p>
 
-        <form action="" method="post" class="needs-validation" novalidate>
+        <form action="" method="post" class="needs-validation border rounded px-1 py-5" novalidate>
           {% csrf_token %}
 
           <div class="form-row justify-content-center field-error-list">
@@ -106,7 +106,7 @@
               <!-- <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required> -->
               {{ form.terms_conditions }}
               <label class="form-check-label" for="invalidCheck">
-                I agree to the <a href=https://devrefresh.com/terms">terms and conditions</a>
+                I agree to the <u><a href="{% url 'terms' %}">terms and conditions</a></u>
               </label>
               <div class="invalid-feedback">
                 You must agree before submitting.

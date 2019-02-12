@@ -22,10 +22,10 @@
                         <h3 class="masthead-brand col-4">Dev Refresh</h3>
                         <nav class="col-8">
                         <ul class="nav masthead-nav">
-                            <li><a href="https://devrefresh.com">Home</a></li>
-                            <li class="active"><a href="https://devrefresh.com/about">About</a></li>
-                            <li><a href="https://devrefresh.com/contact">Contact</a></li>
-                            <li><a href="https://devrefresh.com/signup">Sign up</a></li>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li class="active"><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                            <li><a href="{% url 'signup' %}">Sign up</a></li>
                         </ul>
                         </nav>
                     </div>

@@ -109,6 +109,10 @@ body {
 /*
  * Form
  */
+ form {
+  background-color: #444444;
+}
+
  .field-error-list {
     color: #e09d9d;
  }
@@ -116,6 +120,7 @@ body {
 .field-error {
     background-color: #e09d9d;
 }
+
 
 /*
  * Cover
