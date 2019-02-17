@@ -58,7 +58,7 @@ def signup(request):
             new_user.save()
             login(request=request, user=new_user)
             #redirect
-            return redirect('index')
+            return redirect('construction')
         else:
             # Append css error class to each field that has errors
             for field in form.errors:
@@ -82,5 +82,16 @@ def terms(request):
     return render(
         request,
         'terms.html',
+        context={}
+    )
+
+def construction(request):
+    """
+    page to let user know the learning platform is still under construction
+    """
+
+    return render(
+        request,
+        'construction.html',
         context={}
     )
