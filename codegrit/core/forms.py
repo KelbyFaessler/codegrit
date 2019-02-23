@@ -2,14 +2,6 @@ from .models import User
 from django import forms
 
 class UserForm(forms.ModelForm):
-    """TODO: Remove this constructor if not needed (if error class is added in view or template)
-    def __init__(self, *args, **kwargs):
-        super(UserForm, self).__init__(*args, **kwargs)
-        for field in self.fields:
-            if field.error_messages is not None:
-                field.widget.attrs["class"] += "field-error"
-    """
-
     password = forms.CharField(widget=forms.PasswordInput(attrs={"class": "form-control",
                                                                  "placeholder": "Password",
                                                                  "required": "required"}))
@@ -49,4 +41,5 @@ class UserForm(forms.ModelForm):
             raise forms.ValidationError("password and confirmation password do not match")
 
         terms_agreement = cleaned_data.get("terms_conditions")
-        print("Terms + conditions value: " + str(terms_agreement))
+        
+        return cleaned_data

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.forms import UserForm
+from .forms import UserForm
 from .models import User
 from django.contrib.auth import login
 from django.shortcuts import redirect
