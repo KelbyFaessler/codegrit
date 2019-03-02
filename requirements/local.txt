@@ -1,5 +1,6 @@
 -r ./base.txt
 
+psycopg2==2.7.7            # postgresql interface
 astroid==2.1.0             # for pylint
 colorama==0.4.1            # only for Windows, enables colored console output
 isort==4.3.4               # sorts import statements in python code, only for development

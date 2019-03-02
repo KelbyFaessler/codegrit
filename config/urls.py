@@ -22,5 +22,5 @@ urlpatterns = [
 
 from django.urls import include
 urlpatterns += [
-    path('', include('core.urls')),
+    path('', include('codegrit.core.urls')),
 ]
