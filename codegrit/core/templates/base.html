@@ -13,8 +13,15 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
+        //analytics
         gtag('config', 'UA-134453654-1');
+
+        //ads conversion tracking
+        gtag('config', 'AW-814661088');
+
         </script>
+
+        {% block conversion %}{% endblock %}
 
         <meta name="description" content="">
         <meta name="author" content="">
